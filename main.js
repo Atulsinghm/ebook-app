@@ -6,7 +6,7 @@ function createWindow() {
   window = new BrowserWindow({
     width: 1200,
     height: 700,
-    title: "Test"
+    title: "Ebook-App"
   });
 
   const template = [
