@@ -10,6 +10,14 @@
   "author": "Niraj Nandish",
   "license": "ISC",
   "devDependencies": {
-    "electron": "^2.0.7"
+    "devtron": "^1.4.0",
+    "electron": "^2.0.8",
+    "electron-packager": "^12.1.0"
+  },
+  "dependencies": {
+    "fs-extra": "^7.0.0",
+    "react": "^16.4.2",
+    "react-desktop": "^0.3.7",
+    "react-dom": "^16.4.2"
   }
 }
