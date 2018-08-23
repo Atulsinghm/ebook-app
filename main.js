@@ -1,4 +1,6 @@
 const { BrowserWindow, app, Menu } = require("electron");
+const { stat }  = require("fs-extra/lib/fs");
+
 
 function createWindow() {
   window = new BrowserWindow({
@@ -43,7 +45,17 @@ function createWindow() {
   let menu = Menu.buildFromTemplate(template);
   Menu.setApplicationMenu(menu);
 
-  window.loadFile("index.html");
+  stat("index.html", function(err) {
+    if (err == null) {
+      console.log("Index.html exists");
+      window.loadFile("index.html");
+    } else if (err.code == "ENOENT") {
+      console.log("Index.html does not exist and will now load main site");
+      window.loadURL("https://getfreestorybooks.weebly.com");
+    } else {
+      console.log("Some other error has occured. ERRCODE: ", err.code);
+    }
+  });
 }
 
 app.on("ready", createWindow);
