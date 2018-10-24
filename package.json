@@ -16,7 +16,7 @@
   },
   "dependencies": {
     "fs-extra": "^7.0.0",
-    "react": "^16.4.2",
+    "react": "^16.6.0",
     "react-desktop": "^0.3.7",
     "react-dom": "^16.6.0"
   }
